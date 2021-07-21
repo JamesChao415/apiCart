@@ -79,8 +79,8 @@ body {
 }
 
 .topBar {
-  border-bottom: 40px solid #000000;
-  margin-bottom: 30px;
+  /*border-bottom: 40px solid #000000;
+  margin-bottom: 30px;*/
 }
 
 .topBar .wrap {

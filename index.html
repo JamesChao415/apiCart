@@ -9,6 +9,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="css/all.css">
+    <style type="text/css">
+        .marquee {
+            height: 40px;
+            overflow: hidden;
+            background: #000;
+            margin-bottom: 30px;
+        }
+        .marquee h3 {
+            font-size: 1em;
+            line-height: 40px;
+            color: #fff;
+            transform:translateX(100%);
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { 
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+    
 </head>
 <body>
     <nav class="topBar">
@@ -25,6 +49,9 @@
             </ul>
         </div>
     </nav>
+    <div class="marquee">
+        <h3>偏遠地區須加收偏遠費用，如無法接受商品自身運費與偏遠加費客戶可採用自取方式，自取時請自行現場清點商品，客戶無誤確認後簽名載走。</h3>
+    </div>
     <section class="wrap" id="bedAdvantage">
         <div class="banner">
             <h2 class="banner-text">窩窩家居<br>跟您一起品味生活</h2>
