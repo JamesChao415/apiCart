@@ -5,7 +5,7 @@ function init(){
 }
 init();
 function getOrderList(){
-  axios.get(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/admin/${api_path}/orders`,{
+  axios.get(`https://livejs-api.hexschool.io/api/livejs/v1/admin/${api_path}/orders`,{
   	headers:{
   		authorization: token,
   	}
@@ -84,7 +84,7 @@ function changeOrderItem(status,id){
 	}else{
 		newStatus = true;
 	}
-	axios.put(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/admin/${api_path}/orders/`,{
+	axios.put(`https://livejs-api.hexschool.io/api/livejs/v1/admin/${api_path}/orders/`,{
 	  "data": {
 	    "id": id,
 	    "paid": newStatus
@@ -106,7 +106,7 @@ function changeOrderItem(status,id){
 
 
 function deleteOrderItem(id){
-	axios.delete(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/admin/${api_path}/orders/${id}`,{
+	axios.delete(`https://livejs-api.hexschool.io/api/livejs/v1/admin/${api_path}/orders/${id}`,{
   	headers:{
   		authorization: token,
   	}
@@ -161,7 +161,7 @@ function renderC3(){
 
 const discardAllBtn = document.querySelector('.discardAllBtn');
 discardAllBtn.addEventListener('click',function(e){
-	axios.delete(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/admin/${api_path}/orders/`,{
+	axios.delete(`https://livejs-api.hexschool.io/api/livejs/v1/admin/${api_path}/orders/`,{
   	headers:{
   		authorization: token,
   	}

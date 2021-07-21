@@ -39,7 +39,7 @@ function init(){
 }
 init();
 function getProductList(){
-	axios.get(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/products`)
+	axios.get(`https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/products`)
 	.then(function(response){
 		console.log(response);
 		productData = response.data.products;
@@ -78,7 +78,7 @@ function getCartItem(id){
 	  }
 	})
 	
-	axios.post('https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/james/carts',
+	axios.post('https://livejs-api.hexschool.io/api/livejs/v1/customer/james/carts',
 	{
 	  "data": {
 	    "productId": id,
@@ -98,7 +98,7 @@ function getCartItem(id){
 //getCartList
 
 function getCartList(){
-	axios.get(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/james/carts`)
+	axios.get(`https://livejs-api.hexschool.io/api/livejs/v1/customer/james/carts`)
 	.then(function(res){
 		console.log(res);
 		cartData = res.data.carts;
@@ -144,7 +144,7 @@ shoppingCartList.addEventListener('click',function(e){
 	}
 	const cartTitle = e.target.getAttribute('data-product');
 	console.log(cartTitle);
-	axios.delete(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts/${cartId}`)
+	axios.delete(`https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/carts/${cartId}`)
 	.then(function(res){
 		alert(`刪除 ${cartTitle} 品項成功`);
 		getCartList();
@@ -158,7 +158,7 @@ const discardAllBtn = document.querySelector('.discardAllBtn');
 
 discardAllBtn.addEventListener('click',function(e){
 	e.preventDefault();
-	axios.delete(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/carts`)
+	axios.delete(`https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/carts`)
 	.then(function(res){
 		alert('全部刪除購物車成功');
 		getCartList();
@@ -187,7 +187,7 @@ orderInfoBtn.addEventListener('click',function(e){
 		return;
 	}
 	console.log(customerName,customerPhone,customerEmail,customerAddress,tradeWay);
-	axios.post(`https://hexschoollivejs.herokuapp.com/api/livejs/v1/customer/${api_path}/orders`,{
+	axios.post(`https://livejs-api.hexschool.io/api/livejs/v1/customer/${api_path}/orders`,{
 	  "data": {
 	    "user": {
 	      "name": customerName,
